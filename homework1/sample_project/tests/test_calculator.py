@@ -8,7 +8,6 @@ from sample_project.calculator.calc import check_power_of_2
         (65536, True),
         (12, False),
         (0, False),
-        (1 / 4, True),
     ],
 )
 def test_power_of_2(value: int, expected_result: bool):
@@ -17,4 +16,8 @@ def test_power_of_2(value: int, expected_result: bool):
     assert actual_result == expected_result
 
 
-# 0 not a power of two
+def test_float_value():
+    with pytest.raises(TypeError):
+        assert check_power_of_2(1/4)
+
+

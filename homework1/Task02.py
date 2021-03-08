@@ -6,16 +6,25 @@ We guarantee, that the given sequence contain >= 0 integers inside.
 """
 from typing import Sequence
 
-# from collections import Sequence
-
 
 def check_fibonacci(data: Sequence[int]) -> bool:
-    if len(data) >= 3:
-        for i in range(len(data) - 2):
+    length = len(data)
+    if length == 0:
+        return True
+    elif length == 1:
+        if data[0] == 0 or data[0] == 1:
+            return True
+        return False
+    elif length == 2:
+        if data[1] == 1 and data[0] == 0 or data[0] == 1:
+            return True
+        return False
+    else:
+        for i in range(length - 2):
             if data[i + 2] != data[i] + data[i + 1]:
                 return False
         return True
-    return False
+
 
 
 print(check_fibonacci([0, 1, 1]))

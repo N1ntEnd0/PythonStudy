@@ -6,10 +6,11 @@ We guarantee, that all A, B, C, D have same length of N where 0 ≤ N ≤ 1000.
 """
 from typing import List
 
-# main idea of this method (a[i] + b[i]) == (-c[k] - d[l])
-
 
 def check_sum_of_four(a: List[int], b: List[int], c: List[int], d: List[int]) -> int:
+    """
+    main idea of this method (a[i] + b[i]) == (-c[k] - d[l])
+    """
     dic = {}
     res = 0
     for i in a:

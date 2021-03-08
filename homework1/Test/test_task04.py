@@ -1,5 +1,4 @@
-import pytest
-from Task4.Task4.Task04 import check_sum_of_four
+from Task04 import check_sum_of_four
 
 
 def test_function():
