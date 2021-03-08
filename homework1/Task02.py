@@ -25,6 +25,3 @@ def check_fibonacci(data: Sequence[int]) -> bool:
                 return False
         return True
 
-
-
-print(check_fibonacci([0, 1, 1]))
