@@ -14,13 +14,17 @@ def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
     if length > 0:
         max_sum = nums[0]
         count = 0
-        for i in range(length - k + 1):
-            for j in range(i, i + k):
+        for i in range(length):
+            for j in range(i, length):
+                if j >= i + k or j >= length:
+                    break
                 count += nums[j]
-            if count > max_sum:
-                max_sum = count
+                if count > max_sum:
+                    max_sum = count
             count = 0
         return max_sum
     return 0
+
+
 
 
