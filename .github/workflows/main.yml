@@ -10,12 +10,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Run script
         run: |
-          pip install black pytest
+          pip install isort black pytest
           ls -la
-          - repo: https://github.com/pycqa/isort
-              rev: 5.6.4
-              hooks:
-                - id: isort
-                  args: ["--profile", "black", "--filter-files"]
           black --check .
+          isort --profile black .isort --profile black
           py.test -x homework*
