@@ -6,6 +6,11 @@ jobs:
     name: Checks with black, isort and possibly run tests
     container: python:3.9
     steps:
+      - repo: https://github.com/pycqa/isort
+          rev: 5.6.4
+          hooks:
+            - id: isort
+              args: ["--profile", "black", "--filter-files"]
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run script
@@ -14,3 +19,4 @@ jobs:
           ls -la
           black --check .
           isort --check .
+          py.test -x homework*
