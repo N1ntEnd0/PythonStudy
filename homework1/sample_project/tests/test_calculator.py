@@ -18,6 +18,4 @@ def test_power_of_2(value: int, expected_result: bool):
 
 def test_float_value():
     with pytest.raises(TypeError):
-        assert check_power_of_2(1/4)
-
-
+        assert check_power_of_2(1 / 4)

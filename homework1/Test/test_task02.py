@@ -10,7 +10,7 @@ from Task02 import check_fibonacci
         ([1, 1], True),
         ([0, 1, 2], False),
         ([], True),
-        ([0, 1, 1, 2, 3, 5, 8], True)
+        ([0, 1, 1, 2, 3, 5, 8], True),
     ],
 )
 def test_function(value, expected_result):

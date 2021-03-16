@@ -24,7 +24,3 @@ def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
             count = 0
         return max_sum
     return 0
-
-
-
-

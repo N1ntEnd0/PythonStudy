@@ -24,4 +24,3 @@ def check_fibonacci(data: Sequence[int]) -> bool:
             if data[i + 2] != data[i] + data[i + 1]:
                 return False
         return True
-

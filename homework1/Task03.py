@@ -22,4 +22,3 @@ def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
             elif minimum > row:
                 minimum = row
     return minimum, maximum
-
