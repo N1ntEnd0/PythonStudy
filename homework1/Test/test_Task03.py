@@ -3,7 +3,7 @@ from Task03 import find_maximum_and_minimum
 
 
 def write_file(data):
-    with open("test_data/test_file", 'w') as fi:
+    with open("test_file", 'w') as fi:
         for i in data:
             fi.write(str(i) + '\n')
 
@@ -19,6 +19,6 @@ def write_file(data):
 )
 def test_function(value, expected_result):
     write_file(value)
-    assert find_maximum_and_minimum("test_data/test_file") == expected_result
+    assert find_maximum_and_minimum("test_file") == expected_result
 
 
