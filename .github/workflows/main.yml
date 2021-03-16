@@ -10,11 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Run script
         run: |
-          pip install black isort pytest
+          pip install isort pytest
           ls -la
-          [tool.isort]
-          profile = "black"
-          multi_line_output = 3
-          black --check .
           isort --check .
           py.test -x homework*
