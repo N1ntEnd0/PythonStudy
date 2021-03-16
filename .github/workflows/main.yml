@@ -11,10 +11,6 @@ jobs:
       - name: Run script
         run: |
           pip install black isort
-          [tool.isort]
-          profile = "black"
-          multi_line_output = 3
           ls -la
           black --check .
-          isort --check .
           py.test -x homework*
