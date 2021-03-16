@@ -13,5 +13,5 @@ jobs:
           pip install isort black pytest
           ls -la
           black --check .
-          isort --profile black .isort --profile black
+          isort --profile black .
           py.test -x homework*
