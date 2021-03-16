@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Run script
         run: |
-          pip install isort
-          ls -la
+          pip install isort pytest
+          ls -la 
           isort --check .
           py.test -x homework*
