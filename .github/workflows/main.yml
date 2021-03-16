@@ -10,9 +10,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Run script
         run: |
-          pip install isort black pytest
+          pip install black pytest
           ls -la
-          isort --profile black .
           black --check .
           py.test -x homework*
           
