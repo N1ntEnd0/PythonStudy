@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Run script
         run: |
-          pip install isort pytest
+          pip install black pytest
           ls -la
           - repo: https://github.com/pycqa/isort
               rev: 5.6.4
