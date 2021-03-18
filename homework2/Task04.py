@@ -16,15 +16,17 @@ from typing import Callable
 def cache(func: Callable) -> Callable:
     dic = {}
 
-    def wrapper(a, b):
-        if (a, b) in dic:
-            return dic.get((a, b))
-        res = func(a, b)
-        dic[(a, b)] = res
+    def wrapper(*args, **kwargs):
+
+        tuple_args = (*args, tuple(*kwargs.items()))
+        if tuple_args in dic:
+            return dic.get(tuple_args)
+        res = func(*args, **kwargs)
+        dic[tuple_args] = res
         return res
 
     return wrapper
 
 
-def func(a, b):
+def func(a, b=2):
     return (a ** b) ** 2
