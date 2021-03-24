@@ -14,7 +14,7 @@ jobs:
           ls -la
           isort --ckeck --profile black .
           black --check .
-          pytest .
+          py.test -x homework*
       
           
           
