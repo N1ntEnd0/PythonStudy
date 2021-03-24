@@ -14,7 +14,6 @@ jobs:
           ls -la
           isort --check --profile black .
           black --check .
-          pytest .
       
           
           
