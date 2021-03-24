@@ -1,5 +1,4 @@
 import pytest
-
 from Task02 import major_and_minor_elem
 
 
