@@ -13,7 +13,7 @@ jobs:
           pip install isort black pytest
           ls -la
           isort --check --profile black .
-          black --check .
+          black --check --diff .
       
           
           

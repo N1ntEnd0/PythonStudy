@@ -28,6 +28,3 @@ def custom_range(*args):
         step = args[3]
 
     return value[start:end:step]
-
-
-# done
