@@ -1,5 +1,4 @@
 import pytest
-
 from Task04 import is_armstrong
 
 
