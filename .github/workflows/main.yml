@@ -12,7 +12,7 @@ jobs:
         run: |
           pip install isort black pytest
           ls -la
-          isort --ckeck --profile black .
+          isort --check --profile black .
           black --check .
           py.test -x homework*
       
