@@ -1,7 +1,6 @@
 import os
 
 import pytest
-
 from Task1 import read_magic_number
 
 
