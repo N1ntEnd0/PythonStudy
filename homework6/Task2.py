@@ -128,10 +128,14 @@ class Teacher(Human):
         if len(args) == 0:
             Teacher.homework_done.clear()
         else:
-            Teacher.homework_done.pop(args)
+            for i in args:
+                Teacher.homework_done.pop(i)
 
     def create_homework(self, text, deadline):
         return Homework(text, deadline)
+
+
+#     todo for
 
 
 if __name__ == "__main__":
