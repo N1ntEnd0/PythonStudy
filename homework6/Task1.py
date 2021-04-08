@@ -12,11 +12,11 @@ reset_instances_counter - сбросить счетчик экземпляров
 def instances_counter(cls):
     """Some code"""
 
-    class Newcls:
+    class Newcls(cls):
         __counter = 0
 
         def __init__(self, *args, **kwargs):
-            self._obj = cls(*args, **kwargs)
+            super().__init__(*args, **kwargs)
             Newcls.__counter += 1
 
         @staticmethod
