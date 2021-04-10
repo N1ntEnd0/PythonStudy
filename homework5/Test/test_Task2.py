@@ -1,13 +1,15 @@
 import pytest
+
 from Task2 import custom_sum
 
 
-@pytest.fixture
-def fixture():
+def test_stdout_of_print_result(capsys):
     custom_sum([1, 2, 3], [4, 5])
+    captured = capsys.readouterr()
+    assert captured.out == "[1, 2, 3] [4, 5]\n[1, 2, 3, 4, 5]\n"
 
 
-def test_doc(fixture):
+def test_doc():
     assert custom_sum.__doc__ == "This function can sum any objects which have __add___"
 
 
