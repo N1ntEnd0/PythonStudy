@@ -37,5 +37,5 @@ def read_magic_number(path: str) -> bool:
                     return True
                 i += 0.00001
             return False
-    except Exception:
-        raise ValueError
+    except Exception as e:
+        raise ValueError from e

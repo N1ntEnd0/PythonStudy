@@ -21,13 +21,16 @@ You will learn:
 import urllib.request
 
 
+def get_text_from_network(url):
+    return str(urllib.request.urlopen(url).read())
+
+
 def count_dots_on_i(url: str) -> int:
     count = 0
     try:
-        gen_text = (i for i in str(urllib.request.urlopen(url).read()))
-        for i in gen_text:
-            if i == "i":
+        for letter in get_text_from_network(url):
+            if letter == "i":
                 count += 1
         return count
-    except Exception:
-        raise ValueError(f"Unreachable {url}")
+    except Exception as e:
+        raise ValueError(f"Unreachable {url}") from e
