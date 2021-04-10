@@ -1,5 +1,4 @@
 import pytest
-
 from Task1 import instances_counter
 
 
