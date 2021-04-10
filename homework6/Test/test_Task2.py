@@ -14,12 +14,16 @@ def test_check_homework():
     teacher1 = Teacher("Daniil", "Shadrin")
     teacher2 = Teacher("Aleksandr", "Smetanin")
     student = Student("Lev", "Sokolov")
+
     hw = teacher2.create_homework("Learn OOP", 1)
     result_1 = student.do_homework(hw, "I have done this hw")
     teacher2.check_homework(result_1)
+
     temp_1 = teacher2.homework_done
+
     teacher1.check_homework(result_1)
     temp_2 = Teacher.homework_done
+
     assert temp_1 == temp_2
     Teacher.reset_results()
 

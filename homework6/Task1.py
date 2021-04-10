@@ -16,6 +16,8 @@ def instances_counter(cls):
         __counter = 0
 
         def __init__(self, *args, **kwargs):
+            self.__name__ = cls.__name__
+            self.__doc__ = cls.__doc__
             super().__init__(*args, **kwargs)
             Newcls.__counter += 1
 
