@@ -19,8 +19,7 @@ from typing import Iterator, List, Union
 
 def merge_sorted_files(file_list: List[Union[Path, str]]) -> Iterator:
     with ExitStack() as stack:
-        files = [stack.enter_context(open(file)) for file in file_list]
-        numbers = [[num.strip("\n") for num in line] for line in files]
-
-    for i in zip_longest(*sorted(numbers)):
-        yield from i
+        files = (stack.enter_context(open(file)) for file in file_list)
+        numbers = ([num.strip("\n") for num in line] for line in files)
+        for num in zip_longest(*sorted(numbers)):
+            yield from num

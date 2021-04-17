@@ -16,14 +16,14 @@ def supressor(exception):
 
 
 class Supressor:
-    def __init__(self, exception):
+    def __init__(self, *exception):
         self._exception = exception
 
     def __enter__(self):
         pass
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        if exc_type is self._exception:
+        if exc_type in self._exception:
             return True
         else:
             return False
