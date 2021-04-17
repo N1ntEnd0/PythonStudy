@@ -12,7 +12,6 @@ import os
 import types
 from contextlib import ExitStack
 from pathlib import Path
-from tokenize import generate_tokens
 from typing import Callable, Optional
 
 
@@ -33,7 +32,6 @@ def universal_file_counter(
                     val = tokenizer(line)
                     if isinstance(val, types.GeneratorType):
                         for token in val:
-                            print(token)
                             count += 1
                     else:
                         count += len(tokenizer(line))
