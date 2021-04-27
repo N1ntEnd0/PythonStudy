@@ -2,7 +2,9 @@ from Task1 import find_occurrences
 
 example_tree = {
     "first": ["RED", "BLUE"],
-    "second": {"simple_key": ["simple", "list", "of", "RED", "valued"],},
+    "second": {
+        "simple_key": ["simple", "list", "of", "RED", "valued"],
+    },
     "third": {
         "abc": "BLUE",
         "jhl": "RED",
