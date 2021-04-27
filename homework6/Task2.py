@@ -135,9 +135,6 @@ class Teacher(Human):
         return Homework(text, deadline)
 
 
-#     todo for
-
-
 if __name__ == "__main__":
 
     opp_teacher = Teacher("Daniil", "Shadrin")

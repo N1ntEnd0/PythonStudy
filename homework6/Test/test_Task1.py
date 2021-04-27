@@ -31,7 +31,7 @@ def create_two_classes():
     b.reset_instances_counter()
 
 
-def test():
+def test_the_name_and_docstring_preserved():
     a = A()
     assert a.__name__ == "A"
     assert a.__doc__ == "some documentation"

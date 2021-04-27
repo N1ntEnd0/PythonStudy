@@ -1,6 +1,5 @@
 import pytest
-from Task2 import (DeadlineError, Homework, HomeworkResult, Human, Student,
-                   Teacher)
+from Task2 import DeadlineError, Homework, HomeworkResult, Human, Student, Teacher
 
 
 def test_exeption_in_HomeworkResult():
@@ -9,11 +8,17 @@ def test_exeption_in_HomeworkResult():
         HomeworkResult(student, "error", "solution")
 
 
-def test_check_homework():
+@pytest.fixture
+def create_teachers_and_resert_result():
     teacher1 = Teacher("Daniil", "Shadrin")
     teacher2 = Teacher("Aleksandr", "Smetanin")
     student = Student("Lev", "Sokolov")
+    yield teacher1, teacher2, student
+    Teacher.reset_results()
 
+
+def test_check_homework(create_teachers_and_resert_result):
+    teacher1, teacher2, student = create_teachers_and_resert_result
     hw = teacher2.create_homework("Learn OOP", 1)
     result_1 = student.do_homework(hw, "I have done this hw")
     teacher2.check_homework(result_1)
@@ -24,7 +29,6 @@ def test_check_homework():
     temp_2 = Teacher.homework_done
 
     assert temp_1 == temp_2
-    Teacher.reset_results()
 
 
 def test_reset_results():
