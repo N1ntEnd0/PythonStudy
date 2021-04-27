@@ -2,7 +2,6 @@ import os
 from contextlib import ExitStack
 
 import pytest
-
 from Task1 import merge_sorted_files
 
 
