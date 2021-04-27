@@ -1,5 +1,4 @@
 import pytest
-
 from Task2 import custom_sum
 
 
