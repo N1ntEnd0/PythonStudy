@@ -14,7 +14,7 @@ def test_access_with_attributes(storage):
 
 def test_accessible_as_collection(storage):
     assert storage["name"] == "kek"
-    assert storage["power"] == "9001"
+    assert storage["power"] == 9001
 
 
 def test_len(storage):
@@ -23,3 +23,9 @@ def test_len(storage):
 
 def test_contains(storage):
     assert "name" in storage
+
+
+def test_attribute_clash(storage):
+    assert storage.power == 9001
+    storage.power = 1
+    assert storage.power == 1

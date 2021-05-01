@@ -18,23 +18,28 @@ you are permitted to read it entirely into memory.
 
 
 class KeyValueStorage:
+    _dct = {}
+
     def __init__(self, path):
         with open(path) as f:
             for line in f:
                 name, value = line.strip("\n").split("=")
                 try:
-                    self.__setattr__(name, value)
+                    self._dct[name] = int(value) if value.isdigit() else value
                 except Exception as e:
                     raise ValueError from e
 
+    def __getattr__(self, item):
+        return self._dct.get(item)
+
     def __getitem__(self, item):
-        return getattr(self, item)
+        return self._dct.get(item)
 
     def __len__(self):
-        return len(self.__dict__)
+        return len(self._dct)
 
     def __iter__(self):
-        yield from self.__dict__
+        yield from self._dct.items()
 
     def __contains__(self, item):
-        return hasattr(self, item)
+        return item in self._dct
