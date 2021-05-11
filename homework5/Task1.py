@@ -60,9 +60,7 @@ class Homework:
 
 class Student:
     def __init__(
-        self,
-        last_name,
-        first_name,
+        self, last_name, first_name,
     ):
         self.__first_name = first_name
         self.__last_name = last_name
