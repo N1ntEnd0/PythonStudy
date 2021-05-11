@@ -16,6 +16,3 @@ class HomeworkResult(models.Model):
     author = models.ForeignKey(Human, on_delete=models.CASCADE)
     homework = models.OneToOneField(Homework, on_delete=models.CASCADE)
     solution = models.TextField()
-
-
-

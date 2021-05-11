@@ -2,20 +2,27 @@
 
 from django.db import migrations
 
+
 def fill_db(apps, schema_editor):
     human = apps.get_model("firstapp", "Human")
     homework = apps.get_model("firstapp", "Homework")
     hr = apps.get_model("firstapp", "HomeworkResult")
-    student = human.objects.create(first_name="Roman", last_name="Petrov", status="student")
-    teacher = human.objects.create(first_name="Aleksandr", last_name="Smetanin", status="teacher")
+    student = human.objects.create(
+        first_name="Roman", last_name="Petrov", status="student"
+    )
+    teacher = human.objects.create(
+        first_name="Aleksandr", last_name="Smetanin", status="teacher"
+    )
     oop_hw = homework.objects.create(text="Learn OOP", deadline="2021-05-12")
-    homeworkResult = hr.objects.create(author=student, homework=oop_hw, solution="some code...")
+    homeworkResult = hr.objects.create(
+        author=student, homework=oop_hw, solution="some code..."
+    )
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('firstapp', '0002_auto_20210511_1320'),
+        ("firstapp", "0002_auto_20210511_1320"),
     ]
 
     operations = [
