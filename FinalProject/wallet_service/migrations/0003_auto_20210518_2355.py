@@ -13,7 +13,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.DeleteModel(name="Test1",),
+        migrations.DeleteModel(
+            name="Test1",
+        ),
         migrations.AlterField(
             model_name="transactionlogs",
             name="amount",
