@@ -11,7 +11,9 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RenameField(
-            model_name="transactionlogs", old_name="wallet_id", new_name="wallet",
+            model_name="transactionlogs",
+            old_name="wallet_id",
+            new_name="wallet",
         ),
         migrations.AlterField(
             model_name="transactionlogs",

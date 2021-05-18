@@ -173,9 +173,7 @@ def get_logs(request: WSGIRequest) -> HttpResponse:
             data: list = list(
                 models.TransactionLogs.objects.filter(
                     wallet_id=wall_id.values_list("id")[0]
-                ).values(
-                    "amount", "date", "sender", "recipient", "operation"
-                )
+                ).values("amount", "date", "sender", "recipient", "operation")
             )
             return HttpResponse(json.dumps(data, default=str), status=200)
     return HttpResponse(status=400)
