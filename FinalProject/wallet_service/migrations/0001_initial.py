@@ -109,6 +109,8 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={"ordering": ["date"],},
+            options={
+                "ordering": ["date"],
+            },
         ),
     ]
